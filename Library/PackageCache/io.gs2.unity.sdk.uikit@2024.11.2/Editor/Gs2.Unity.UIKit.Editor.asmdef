@@ -1,0 +1,47 @@
+{
+    "name": "Gs2.Unity.UIKit.Editor",
+    "rootNamespace": "",
+    "references": [
+        "Gs2",
+        "Gs2.Unity",
+        "Gs2.Unity.UIKit",
+        "UniTask",
+        "UniTask.Linq",
+        "UnityEngine.Purchasing",
+        "UnityEngine.Purchasing.Stores",
+        "Unity.Localization",
+        "AppleAuth"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.purchasing",
+            "expression": "",
+            "define": "GS2_ENABLE_PURCHASING"
+        },
+        {
+            "name": "com.lupidan.apple-signin-unity",
+            "expression": "",
+            "define": "ENABLE_SIGN_IN_WITH_APPLE"
+        },
+        {
+            "name": "com.cysharp.unitask",
+            "expression": "",
+            "define": "GS2_ENABLE_UNITASK"
+        },
+        {
+            "name": "com.unity.localization",
+            "expression": "",
+            "define": "GS2_ENABLE_LOCALIZATION"
+        }
+    ],
+    "noEngineReferences": false
+}

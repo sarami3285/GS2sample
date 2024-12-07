@@ -1,0 +1,89 @@
+/*
+ * Copyright 2016 Game Server Services, Inc. or its affiliates. All Rights
+ * Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Gs2.Core.Control;
+using Gs2.Core.Model;
+using Gs2.Gs2StateMachine.Model;
+using Gs2.Util.LitJson;
+
+#if UNITY_2017_1_OR_NEWER
+using UnityEngine.Scripting;
+#endif
+
+namespace Gs2.Gs2StateMachine.Request
+{
+#if UNITY_2017_1_OR_NEWER
+	[Preserve]
+#endif
+	[System.Serializable]
+	public class GetStateMachineMasterRequest : Gs2Request<GetStateMachineMasterRequest>
+	{
+         public string NamespaceName { set; get; } = null!;
+         public long? Version { set; get; } = null!;
+        public GetStateMachineMasterRequest WithNamespaceName(string namespaceName) {
+            this.NamespaceName = namespaceName;
+            return this;
+        }
+        public GetStateMachineMasterRequest WithVersion(long? version) {
+            this.Version = version;
+            return this;
+        }
+
+#if UNITY_2017_1_OR_NEWER
+    	[Preserve]
+#endif
+        public static GetStateMachineMasterRequest FromJson(JsonData data)
+        {
+            if (data == null) {
+                return null;
+            }
+            return new GetStateMachineMasterRequest()
+                .WithNamespaceName(!data.Keys.Contains("namespaceName") || data["namespaceName"] == null ? null : data["namespaceName"].ToString())
+                .WithVersion(!data.Keys.Contains("version") || data["version"] == null ? null : (long?)(data["version"].ToString().Contains(".") ? (long)double.Parse(data["version"].ToString()) : long.Parse(data["version"].ToString())));
+        }
+
+        public override JsonData ToJson()
+        {
+            return new JsonData {
+                ["namespaceName"] = NamespaceName,
+                ["version"] = Version,
+            };
+        }
+
+        public void WriteJson(JsonWriter writer)
+        {
+            writer.WriteObjectStart();
+            if (NamespaceName != null) {
+                writer.WritePropertyName("namespaceName");
+                writer.Write(NamespaceName.ToString());
+            }
+            if (Version != null) {
+                writer.WritePropertyName("version");
+                writer.Write((Version.ToString().Contains(".") ? (long)double.Parse(Version.ToString()) : long.Parse(Version.ToString())));
+            }
+            writer.WriteObjectEnd();
+        }
+
+        public override string UniqueKey() {
+            var key = "";
+            key += NamespaceName + ":";
+            key += Version + ":";
+            return key;
+        }
+    }
+}
