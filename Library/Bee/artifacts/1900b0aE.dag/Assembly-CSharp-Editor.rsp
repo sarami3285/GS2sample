@@ -344,6 +344,7 @@
 -r:"Library/PackageCache/io.gs2.csharp.sdk@2024.12.2/Plugins/Google.Protobuf.dll"
 -r:"Library/PackageCache/io.gs2.csharp.sdk@2024.12.2/Plugins/LitJSON.dll"
 -r:"Library/PackageCache/io.gs2.csharp.sdk@2024.12.2/Plugins/websocket-sharp.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Gs2.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Gs2.Unity.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Gs2.Unity.ref.dll"
