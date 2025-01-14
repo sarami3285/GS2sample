@@ -1,0 +1,8 @@
+{
+    "name": "NewAssembly",
+    "references": [
+        "Gs2.Unity",
+        "Gs2.Unity.Lottery",
+        "Gs2.Unity.Gs2Inventory"
+    ]
+}
