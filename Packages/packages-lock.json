@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.cysharp.unitask": {
+      "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "8042b29ff87dd5506d7aad72bd6d8d7405985f27"
+    },
     "com.unity.2d.animation": {
       "version": "9.1.0",
       "depth": 1,
@@ -180,7 +187,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.textmeshpro": {
-      "version": "3.0.6",
+      "version": "3.0.9",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -220,7 +227,7 @@
       "url": "https://packages.unity.com"
     },
     "io.gs2.csharp.sdk": {
-      "version": "2024.12.2",
+      "version": "2025.1.8",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -229,7 +236,7 @@
       "url": "https://upm.gs2.io/npm"
     },
     "io.gs2.unity.sdk": {
-      "version": "2024.11.5",
+      "version": "2025.1.7",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -237,8 +244,18 @@
       },
       "url": "https://upm.gs2.io/npm"
     },
+    "io.gs2.unity.sdk.local-state-machine-kit": {
+      "version": "2023.12.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0",
+        "io.gs2.unity.sdk": "2022.2.6"
+      },
+      "url": "https://upm.gs2.io/npm"
+    },
     "io.gs2.unity.sdk.uikit": {
-      "version": "2024.11.2",
+      "version": "2024.12.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {
